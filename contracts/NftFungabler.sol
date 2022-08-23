@@ -93,7 +93,7 @@ contract NftFungabler {
         nftContract.transferFrom(address(this), msg.sender, _nftTokenId);
         erc20Contract.transferFrom(
             msg.sender,
-            address(0),
+            address(0xdead),
             erc20Contract.totalSupply()
         );
     }
