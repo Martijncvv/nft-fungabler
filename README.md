@@ -1,13 +1,5 @@
-# Sample Hardhat Project
+# NFT Fungabler
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Since it's hard to get a little of value for your jpegs. Why not lock it up in a contract and sell shares of it.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+A contract that locks an NFT and creates a specified amount of ERC20 tokens. To unlock the NFT from the smartcontract, the accounts needs to hold ALL ERC20 tokens.
