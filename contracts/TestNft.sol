@@ -3,6 +3,9 @@ pragma solidity 0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+// @title Artwork, for Smartcontract tests
+// @author marty_cfly
+// @notice Mints a basic NFT to test the NftFungabler contract
 contract Artwork is ERC721 {
     uint256 public tokenCounter;
     mapping(uint256 => string) private _tokenURIs;
