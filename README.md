@@ -10,11 +10,15 @@ A contract that locks an ERC721 token and creates a specified amount of ERC20 to
 
 ## Directory Structure
 
-| Folder    | Content                           |
-| --------- | --------------------------------- |
-| Contracts | Solidity smartcontracts           |
-| Scripts   | Scripts to deploy smartcontracts  |
-| Test      | Smartcontract tests in Javascript |
+| Folder    | Content                           |                          |
+| --------- | --------------------------------- | ------------------------ |
+| Contracts | Solidity smartcontracts           |                          |
+|           |                                   | NftFungabler.sol         |
+|           |                                   | ConstantFactorAmmDex.sol |
+| Scripts   | Scripts to deploy smartcontracts  |                          |
+|           |                                   | deploy.js                |
+| Test      | Smartcontract tests in Javascript |                          |
+|           |                                   | NftFungabler.js          |
 
 ## Run smartcontract tests
 
