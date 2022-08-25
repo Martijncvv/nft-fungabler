@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 // @title Constant Factor AMM Dex
 // @author marty_cfly
-// @notice AMMDex contract gets created when ERC20tokens of NFT gets minted.
+// @notice Dex to create a swapping pool
 contract TokenAmmDex {
     /// @notice Emitted when ETH gets swapped to Token
     /// @param caller msg.sender

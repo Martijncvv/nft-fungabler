@@ -4,9 +4,14 @@
 
 Since it's hard to get a little bit of value for your jpegs these days. Why not lock it up in a smartcontract and sell shares of it.
 
-A contract that locks an ERC721 token and creates a specified amount of ERC20 tokens. In order to unlock the NFT from the smartcontract, the account needs to hold ALL ERC20 tokens.
+### NftFungabler
 
+A contract that locks an ERC721 token and creates a specified amount of ERC20 tokens. In order to unlock the NFT from the smartcontract, the account needs to hold ALL ERC20 tokens.
 [Verified Etherscan Rinkeby Contractaddress](https://rinkeby.etherscan.io/address/0x3eed2A53fEA6d40F26F1296115bDF27dE39895a8#code)
+
+### ConstantFactorAmmDex
+
+A contract to create a swapping pool.
 
 ## Directory Structure
 
