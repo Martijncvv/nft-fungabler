@@ -48,32 +48,6 @@ const ConnectWalletHeroe: React.FunctionComponent<IConnectWalletHeroeProps> = ({
 				<Col></Col>
 			</Row>
 		</Container>
-		// <Modal.Dialog>
-		// 	<Modal.Header closeButton>
-		// 		<Modal.Title>Connect Wallet</Modal.Title>
-		// 	</Modal.Header>
-
-		// 	<Modal.Body>
-		// 		<p>Modal body text goes here.</p>
-		// 	</Modal.Body>
-
-		// 	<Modal.Footer>
-		// 		<Button
-		// 			variant="primary"
-		// 			disabled={isLoading}
-		// 			onClick={() => (!isLoading ? handleButtonClick() : null)}
-		// 		>
-		// 			{isLoading ? (
-		// 				<div>
-		// 					<Spinner animation="border" variant="light" size="sm" />{' '}
-		// 					<span>Connecting...</span>
-		// 				</div>
-		// 			) : (
-		// 				'Connect'
-		// 			)}
-		// 		</Button>
-		// 	</Modal.Footer>
-		// </Modal.Dialog>
 	)
 }
 

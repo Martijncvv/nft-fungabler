@@ -85,12 +85,12 @@ contract NftFungabler {
     /// @param _erc20Amount Minted ERC20 amount
     /// @param _nftContractAddress Contract address of NFT to lock
     /// @param _nftTokenId TokenId of NFT to lock
-    function lockNFT(
+    function lockNft(
+        address _nftContractAddress,
+        uint256 _nftTokenId,
         string memory _erc20Name,
         string memory _erc20Ticker,
-        uint256 _erc20Amount,
-        address _nftContractAddress,
-        uint256 _nftTokenId
+        uint256 _erc20Amount
     ) external {
         // Transfers NFT to Contract
         IERC721 nftContract = IERC721(_nftContractAddress);
@@ -156,7 +156,7 @@ contract NftFungabler {
     /// @param _nftContractAddress Contract address of NFT to unlock
     /// @param _nftTokenId TokenId of NFT to lock
     /// @return erc20Address Returns address of ERC20 tokens of locked NFT
-    function getErc20ofNft(address _nftContractAddress, uint256 _nftTokenId)
+    function getErc20OfErc721(address _nftContractAddress, uint256 _nftTokenId)
         external
         view
         returns (address erc20Address)
