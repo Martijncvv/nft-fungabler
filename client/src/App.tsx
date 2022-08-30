@@ -97,12 +97,12 @@ function App() {
 		<div className="App">
 			<Container>
 				<Row>
-					<Alert variant="primary">{infoBar}</Alert>
 					<Col xs={11}>
 						<NavbarTop />
 						{currentAccount.length === 0 && (
 							<ConnectWalletHeroe connectWallet={connectWallet} />
 						)}
+						{infoBar.length > 0 && <Alert variant="primary">{infoBar}</Alert>}
 						<NftFungabler
 							currentAccount={currentAccount}
 							nftFungablerContract={nftFungablerContract}

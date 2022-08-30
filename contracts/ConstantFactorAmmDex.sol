@@ -76,7 +76,7 @@ contract TokenAmmDex {
         return totalLiquidity;
     }
 
-    /// @notice Gets output amount of constant factor formula (x + xd * y + yd = k)
+    /// @notice Gets output amount of constant factor formula (x + xd * y - yd = k)
     /// @param _xInput Amount added to the liquidity pool
     /// @param _xReserves Amount of x in liquidity pool
     /// @param _yReserves Amount of y in liquidity pool

@@ -36,19 +36,36 @@ const NftFungabler: React.FunctionComponent<INftFungablerProps> = ({
 	const [erc20Address, setErc20Address] = useState<string>('')
 
 	const [erc20Balance, setErc20Balance] = useState<any>()
+	const [erc20Contract, setErc20Contract] = useState<any>()
+	const [erc721Contract, setErc721Contract] = useState<any>()
 
-	// useEffect(() => {
-	// 	getBalanceOfAccount()
-	// }, [currentAccount, erc721Address, erc20Address])
+	useEffect(() => {
+		getContracts()
+	}, [currentAccount, ERC721_CONTRACT_ABI, ERC20_CONTRACT_ABI])
 
-	const lockErc721 = async () => {
+	const getContracts = async () => {
 		try {
-			const erc721Contract = await new ethers.Contract(
+			let contractErc721 = await new ethers.Contract(
 				erc721Address,
 				ERC721_CONTRACT_ABI,
 				signer
 			)
+			setErc721Contract(contractErc721)
 
+			let contractErc20 = await new ethers.Contract(
+				erc20Address,
+				ERC20_CONTRACT_ABI,
+				signer
+			)
+			setErc20Contract(contractErc20)
+			console.log('Contracts Fetched')
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
+	const lockErc721 = async () => {
+		try {
 			let approvalTx = await erc721Contract.approve(
 				NFT_FUNGABLER_CONTRACT_ADDRESS,
 				tokenId
@@ -82,12 +99,6 @@ const NftFungabler: React.FunctionComponent<INftFungablerProps> = ({
 	const unlockErc721 = async () => {
 		try {
 			await getErc20AddressOfErc721()
-
-			const erc20Contract = await new ethers.Contract(
-				erc20Address,
-				ERC20_CONTRACT_ABI,
-				signer
-			)
 
 			let erc20Balance = await getBalanceOfAccount()
 			let totalSupply = await erc20Contract.totalSupply()
@@ -155,6 +166,19 @@ const NftFungabler: React.FunctionComponent<INftFungablerProps> = ({
 		}
 	}
 
+	const getAllTransferEvents = async () => {
+		console.log('erc721Contract')
+		console.log(erc721Contract)
+		let erc721Received = await erc721Contract.filters.Transfer(
+			null,
+			currentAccount
+		)
+		console.log(erc721Received)
+
+		let erc721Sent = await erc721Contract.filters.Transfer(currentAccount, null)
+		console.log(erc721Sent)
+	}
+
 	const handleButtonClickLock = async () => {
 		lockErc721()
 	}
@@ -166,11 +190,7 @@ const NftFungabler: React.FunctionComponent<INftFungablerProps> = ({
 		console.log('erc721Address')
 		console.log(erc721Address)
 		getBalanceOfAccount()
-	}
-
-	const handleErc721AddressChange = async (erc721Address: string) => {
-		setErc721Address(erc721Address)
-		getErc20AddressOfErc721()
+		getAllTransferEvents()
 	}
 
 	return (
@@ -178,7 +198,6 @@ const NftFungabler: React.FunctionComponent<INftFungablerProps> = ({
 			<Row>
 				<Col>
 					<h4>Lock NFT</h4>
-
 					<div>
 						<span className="input-group-text">NFT Contract Address</span>
 						<input
@@ -253,7 +272,7 @@ const NftFungabler: React.FunctionComponent<INftFungablerProps> = ({
 					</Button>
 				</Col>
 				<Col>
-					<h4>Account Info</h4>
+					<h4>Account NFT Info</h4>
 					<h5>Erc20 token</h5>
 					<p>{erc20Address}</p>
 					<h5>Amount</h5>

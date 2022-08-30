@@ -20,7 +20,7 @@ const NavbarTop: React.FunctionComponent<INavbarTopProps> = (props) => {
 						style={{ maxHeight: '100px' }}
 						navbarScroll
 					>
-						<Nav.Link href="#action1">Home</Nav.Link>
+						{/* <Nav.Link href="#action1">Home</Nav.Link>
 						<Nav.Link href="#action2">Link</Nav.Link>
 						<NavDropdown title="Link" id="navbarScrollingDropdown">
 							<NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -34,9 +34,9 @@ const NavbarTop: React.FunctionComponent<INavbarTopProps> = (props) => {
 						</NavDropdown>
 						<Nav.Link href="#" disabled>
 							Link
-						</Nav.Link>
+						</Nav.Link> */}
 					</Nav>
-					<Form className="d-flex">
+					{/* <Form className="d-flex">
 						<Form.Control
 							type="search"
 							placeholder="Search"
@@ -44,7 +44,7 @@ const NavbarTop: React.FunctionComponent<INavbarTopProps> = (props) => {
 							aria-label="Search"
 						/>
 						<Button variant="outline-success">Search</Button>
-					</Form>
+					</Form> */}
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
