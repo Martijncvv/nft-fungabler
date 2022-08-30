@@ -7,7 +7,10 @@ Since it's hard to get a little bit of value for your jpegs these days. Why not 
 ### NftFungabler
 
 A contract that locks an ERC721 token and creates a specified amount of ERC20 tokens. In order to unlock the NFT from the smartcontract, the account needs to hold ALL ERC20 tokens.
+
 [Verified Etherscan Rinkeby Contractaddress](https://rinkeby.etherscan.io/address/0xA9e8F63DF4FDA562cb3C9c18BaD73F86fE4e68b9#code)
+
+### Basic UI to interact with contract
 
 <p align="center">
   <img src="NFT-Fungabler-Preview.png" alt="NFT-Fungabler Preview" width="800" >
